@@ -5,7 +5,7 @@ def menu():
   elif inp == "2":
     print("female")
   elif inp == "3":
-    exit
+    print("")
   else: 
     print("Please enter a valid number")
     menu()
