@@ -9,4 +9,7 @@ def menu():
   else: 
     print("Please enter a valid number")
     menu()
+else: 
+  print("Please enter a valid number")
+  menu()
 menu()
