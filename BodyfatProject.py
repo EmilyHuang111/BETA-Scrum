@@ -10,18 +10,17 @@ def male():
    #Gathering skinfold measurements and other data. 
    
    for body_part in range(1):
-    che = float(input("Enter chest skinfold (in mm): "))
+    che = float(input("Enter chest skinfold (in mm between 10 and 100): "))
     male_body_parts.append(che)
-    abd = float(input("Enter your abdomen skinfold (in mm): "))
+    abd = float(input("Enter your abdomen skinfold (in mm between 10 and 100): "))
     male_body_parts.append(abd)
-    thi = float(input("Enter your thigh skinfold (in mm): "))
+    thi = float(input("Enter your thigh skinfold (in mm between 10 and 100): "))
     male_body_parts.append(thi)
-    wai = float(input("Enter your waist circumference (in m): "))
+    wai = float(input("Enter your waist circumference (in m between 0.8 and 1.2): "))
     male_body_parts.append(wai)
-    fore = float(input("Enter your forearm circumference (in m): "))
+    fore = float(input("Enter your forearm circumference (in m between 0.15 and 0.45): "))
     male_body_parts.append(fore)
     age = float(input("Enter your age (in years): "))
-    male_body_parts.append(age)
     che_abd_thi_sum = 0.0 
     for part in range(3):
       che_abd_thi_sum += male_body_parts[part]
@@ -48,13 +47,13 @@ def female():
    female_body_parts = []
     #Gathering skinfold measurements and other data.
    for body_part in range(1):
-    tri = float(input("Enter your tricep skinfold (in mm): "))
+    tri = float(input("Enter your tricep skinfold (in mm between 10 and 100): "))
     female_body_parts.append(tri)
-    thi = float(input("Enter your thigh skinfold (in mm): "))
+    thi = float(input("Enter your thigh skinfold (in mm between 10 and 100): "))
     female_body_parts.append(thi)
-    sup = float(input("Enter your suprailiac skinfold (in mm): "))
+    sup = float(input("Enter your suprailiac skinfold (in mm between 10 and 100): "))
     female_body_parts.append(sup)
-    glu = float(input("Enter your gluteal circumference (in cm): "))
+    glu = float(input("Enter your gluteal circumference (in cm between 30 and 150): "))
     female_body_parts.append(glu)
     age = float(input("Enter your age (in years): "))
     female_body_parts.append(age)
