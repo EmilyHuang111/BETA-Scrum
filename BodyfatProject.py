@@ -22,10 +22,11 @@ def male():
     male_body_parts.append(fore)
     age = float(input("Enter your age (in years): "))
     male_body_parts.append(age)
-    che_abd_thi_sum = male_body_parts[0] + male_body_parts[1] + male_body_parts[2]
-    
+    che_abd_thi_sum = 0.0 
+    for part in range(3):
+      che_abd_thi_sum += male_body_parts[part]
      # Body density formula needed to calculate body fat %
-    body_density = 1.0990750 - 0.0008209*che_abd_thi_sum + (0.0000026*(che_abd_thi_sum)**2) - 0.0002017*(age) - 0.005675*(wai) + 0.018586*(fore)
+    body_density = 1.0990750 - 0.0008209*che_abd_thi_sum + 0.0000026*(che_abd_thi_sum)**2 - 0.0002017*(age) - 0.005675*(wai) + 0.018586*(fore)
 
    #Calculate body fat percentage
     # print(body_density)
@@ -53,13 +54,15 @@ def female():
     female_body_parts.append(thi)
     sup = float(input("Enter your suprailiac skinfold (in mm): "))
     female_body_parts.append(sup)
-    glu = float(input("Enter your gluteal circumference (in m): "))
+    glu = float(input("Enter your gluteal circumference (in cm): "))
     female_body_parts.append(glu)
     age = float(input("Enter your age (in years): "))
     female_body_parts.append(age)
-    tri_thi_sup_sum = female_body_parts[0] + female_body_parts[1] + female_body_parts[2]
+    tri_thi_sup_sum = 0.0
+    for part in range(3):
+     tri_thi_sup_sum += female_body_parts[part]   
      #Body density formula needed to calculate body fat %
-    body_density = 1.1470292 - 0.0009376*tri_thi_sup_sum + (0.0000030*tri_thi_sup_sum)**2 - 0.0001156*age - 0.0005839*glu
+    body_density = 1.1470292 - 0.0009376*tri_thi_sup_sum + 0.0000030*(tri_thi_sup_sum)**2 - 0.0001156*age - 0.0005839*glu
      #Calculate body fat percentage 
     body_fat_percentage = (495/body_density) - 450
     if body_fat_percentage > 1 and body_fat_percentage < 100:
