@@ -31,7 +31,7 @@ def male():
     # print(body_density)
     body_fat_percentage = (495/body_density) - 450
     # print(body_fat_percentage)
-    if body_fat_percentage >= 0 and body_fat_percentage < 100:
+    if body_fat_percentage > 1 and body_fat_percentage < 100:
       print(f"Your body fat percentage is approximately {round(body_fat_percentage,2)}%")
      #Remove body density and update with body fat percentage in the list.
     else: 
@@ -62,10 +62,8 @@ def female():
     body_density = 1.1470292 - 0.0009376*tri_thi_sup_sum + (0.0000030*tri_thi_sup_sum)**2 - 0.0001156*age - 0.0005839*glu
      #Calculate body fat percentage 
     body_fat_percentage = (495/body_density) - 450
-    print("********************************") 
-    print(body_fat_percentage)
-    if body_fat_percentage >= 0 and body_fat_percentage < 100:
-     print(f"Your body fat percentage is approximately {body_fat_percentage:.2%}.")
+    if body_fat_percentage > 1 and body_fat_percentage < 100:
+     print(f"Your body fat percentage is approximately {round(body_fat_percentage,2)}%")
       #Remove body density and update with body fat percentage in the list.
     else: print("Please enter a valid body part configuration.")
   except: print("Please enter a valid number.")
