@@ -1,8 +1,7 @@
-class Robot(robot):
-     def __init__(self,left_motor, right_motor):
-        self.left_motor = left_motor
-        self.right_motor = right_motor
+from gpiozero import Motor
+import OPi.GPIO as GPIO
 
-    def moveforward(self):
-        self.left_motor(25)
-        self.right_motor(25)
+robot = Robot((4, 14), (17, 27))
+left_motor = Motor(4, 14)
+right_motor = Motor(17, 27)
+robot.forward()
