@@ -2,10 +2,10 @@ import OPi.GPIO as GPIO
 import time
 
 # Define GPIO pins for motor control
-left_motor_pwm = 13  
-left_motor_direction = 11
-right_motor_pwm = 15
-right_motor_direction = 12
+left_motor_pwm = float(13)  
+left_motor_direction = float(11)
+right_motor_pwm = float(15)
+right_motor_direction = float(12)
 
 # Set up GPIO mode
 GPIO.setmode(GPIO.SUNXI)
