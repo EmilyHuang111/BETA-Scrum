@@ -2,48 +2,41 @@ import OPi.GPIO as GPIO
 import time
 
 # Define GPIO pins for motor control
-left_motor_pwm = 13  
-left_motor_direction = 11
-right_motor_pwm = 15
-right_motor_direction = 12
+motor1_a = 11
+motor1_b = 12
+motor2_a = 13
+motor2_b = 15
 
-# Set up GPIO mode
-GPIO.setmode(GPIO.SUNXI)
+# Initialize GPIO
+GPIO.setmode(GPIO.BOARD)
 
-# Set up motor control pins as outputs
-GPIO.setup(left_motor_pwm, GPIO.OUT)
-GPIO.setup(left_motor_direction, GPIO.OUT)
-GPIO.setup(right_motor_pwm, GPIO.OUT)
-GPIO.setup(right_motor_direction, GPIO.OUT)
-
-# Create PWM objects for motor speed control
-left_motor_pwm_obj = GPIO.PWM(left_motor_pwm, 1000)
-right_motor_pwm_obj = GPIO.PWM(right_motor_pwm, 1000)
-
-# Start PWM with 0% duty cycle (motors are initially stopped)
-left_motor_pwm_obj.start(0)
-right_motor_pwm_obj.start(0)
+# Set up motor pins as output
+GPIO.setup(motor1_a, GPIO.OUT)
+GPIO.setup(motor1_b, GPIO.OUT)
+GPIO.setup(motor2_a, GPIO.OUT)
+GPIO.setup(motor2_b, GPIO.OUT)
 
 # Function to move the robot forward
-def move_forward(speed_percent):
-    # Set motor directions (adjust pins as needed)
-    GPIO.output(left_motor_direction, GPIO.HIGH)
-    GPIO.output(right_motor_direction, GPIO.HIGH)
-    
-    # Set motor speeds
-    left_motor_pwm_obj.ChangeDutyCycle(speed_percent)
-    right_motor_pwm_obj.ChangeDutyCycle(speed_percent)
+def move_forward():
+    GPIO.output(motor1_a, 1)
+    GPIO.output(motor1_b, 0)
+    GPIO.output(motor2_a, 1)
+    GPIO.output(motor2_b, 0)
 
-# Move forward at 50% speed for 3 seconds (adjust speed and duration as needed)
+# Function to stop the robot
+def stop():
+    GPIO.output(motor1_a, 0)
+    GPIO.output(motor1_b, 0)
+    GPIO.output(motor2_a, 0)
+    GPIO.output(motor2_b, 0)
+
 try:
-    move_forward(50)  # 50% speed
-    time.sleep(3)     # Run for 3 seconds
-
+    move_forward()
+    time.sleep(2)  # Move forward for 2 seconds
+    stop()
+    
 except KeyboardInterrupt:
-    pass
+    stop()
 
 finally:
-    # Stop the motors and cleanup GPIO
-    left_motor_pwm_obj.stop()
-    right_motor_pwm_obj.stop()
     GPIO.cleanup()
