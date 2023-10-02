@@ -2,10 +2,10 @@ import OPi.GPIO as GPIO
 import time
 
 # Define GPIO pins for motor control
-motor1_a = 11
-motor1_b = 12
-motor2_a = 13
-motor2_b = 15
+motor1_a = 37
+motor1_b = 35
+motor2_a = 33
+motor2_b = 31
 
 # Initialize GPIO
 GPIO.setmode(GPIO.BOARD)
