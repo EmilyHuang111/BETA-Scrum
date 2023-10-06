@@ -23,7 +23,7 @@ GPIO.setup(motor_right_backward_pin, GPIO.OUT)
 GPIO.setup(motor_power_pin, GPIO.IN)
 
 # Define a forward function to move the robot forward
-def move_forward():
+def FWD():
     GPIO.output(motor_left_forward_pin, GPIO.HIGH)
     GPIO.output(motor_right_forward_pin, GPIO.HIGH)
 
@@ -36,7 +36,7 @@ try:
     # Check if motor power is available (binary signal)
     if GPIO.input(motor_power_pin) == GPIO.HIGH:
         # Motor power is available, move forward
-        move_forward()
+        FWD()
 
         # Keep moving forward for 10 seconds
         sleep(10)
