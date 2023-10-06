@@ -15,8 +15,12 @@ GPIO.setup(right_front_motor,GPIO.OUT)
 GPIO.setup(left_back_motor,GPIO.OUT)
 GPIO.setup(right_back_motor,GPIO.OUT)
 
+#Running Motors
 GPIO.output(left_front_motor, GPIO.HIGH)
 GPIO.output(right_front_motor, GPIO.HIGH)
 GPIO.output(left_back_motor, GPIO.HIGH)
 GPIO.output(right_back_motor, GPIO.HIGH)
+sleep(2)
+
+#Stopping Motors
 GPIO.cleanup()
