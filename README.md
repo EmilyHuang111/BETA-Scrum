@@ -43,8 +43,4 @@ This script uses the Adafruit MotorKit library to control motors connected to an
 **Key functionality:**
 - **kit.motorX.throttle**: Sets the motor speed. `1.0` is full forward speed, while `0.0` stops the motor.
 
-### Setup and Usage
 
-1. **Install RPi.GPIO**:
-   ```bash
-   sudo apt-get install python3-rpi.gpio
